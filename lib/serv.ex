@@ -19,7 +19,7 @@ end
 def handle_call(:zapros1,_from,state) do
   {:reply,state,state}
 end
-
+# клиентская часть
 def zapros, do: GenServer.call(__MODULE__,:zapros)
 def zapros1, do: GenServer.call(__MODULE__,:zapros1)
 
