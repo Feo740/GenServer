@@ -5,7 +5,7 @@ defmodule Amn do
     :mnesia.create_schema([node()])#создаем БД,в рабочем кат.
                                   #появится папка Mnesia.nonode@nohost
     :mnesia.start()               #в этом каталоге созд файл schema.DAT
-    :mnesia.create_table(P_players,[{:attributes,[:nikname, :name, :age, :games, :wins]}])
+    :mnesia.create_table(P_players,[{:disk_copies,[node()]},{:attributes,[:nikname, :name, :age, :games, :wins]}])
   end
 
   def wr_database do
