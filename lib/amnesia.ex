@@ -17,12 +17,12 @@ defmodule Amn do
   end
 
   def rd_database(nik) do
-    try do
+  #  try do
     {:atomic, [record]} = :mnesia.transaction(fn ->
   :mnesia.read({:p_players, nik}) end)
-    rescue
-      error -> error
-    end
+  #  rescue
+  #    error -> error
+  #  end
   end
 
   def stop_database do
