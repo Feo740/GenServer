@@ -1,7 +1,7 @@
 defmodule Serv do
   use GenServer
 
-@moduledoc "Основной модуль приложения - генсервер "
+@moduledoc "Основной модуль приложения - генсервер"
 
 @doc "Функция состояния, навырост ака заглушка"
 defmodule State do
