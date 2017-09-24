@@ -1,7 +1,12 @@
 defmodule ServSUP do
   use Supervisor
 
-  # Вспомагательный метод для запуска
+  @moduledoc "
+  Модуль определяет механику работы супервизора"
+
+  @doc "Запуск супервизора
+          разрываем связь с процессом оболочки iex
+          сообщаем PID процесса супервизора "
   def start_l do
   {:ok,pid} = Supervisor.start_link(__MODULE__,[],[{:name,__MODULE__}])
   Process.unlink(pid)
@@ -9,7 +14,8 @@ defmodule ServSUP do
   Process.whereis(Serv)
   end
 
-  # Обратный вызов Супервизора
+  @doc " Обратный вызов Супервизора
+          настраиваем процесс-воркер"
 
   def init([]) do
     child = [worker(Serv,[],[])]
