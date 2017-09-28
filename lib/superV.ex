@@ -7,7 +7,7 @@ defmodule ServSUP do
   @doc "Запуск супервизора
           разрываем связь с процессом оболочки iex
           сообщаем PID процесса супервизора "
-  def start_l do
+  def start_link do
   {:ok,pid} = Supervisor.start_link(__MODULE__,[],[{:name,__MODULE__}])
   Process.unlink(pid)
   IO.puts("Genserver pid now is")

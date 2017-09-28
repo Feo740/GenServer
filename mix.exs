@@ -18,14 +18,16 @@ defmodule Serv.Mixfile do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+      registered: [:database_app],
+      mod: {D_apl, []}
     ]
   end
 
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-    {:ex_doc, ">= 0.0.0", only: :dev},
+    #{:ex_doc, ">= 0.0.0", only: :dev},
           #{:ex_doc, github: "elixir-lang/ex_doc"},
   #  {:markdown, github: "devinus/markdown"}
       #{:serv, "0.1.0"}
