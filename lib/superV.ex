@@ -1,20 +1,15 @@
 defmodule ServSUP do
   use Supervisor
 
-  @moduledoc "
-  Модуль определяет механику работы супервизора"
+  @moduledoc "Модуль определяет механику работы супервизора. ServSUP
+               - это супервизор генсервера serv"
 
-  @doc "Запуск супервизора
-          разрываем связь с процессом оболочки iex
-          сообщаем PID процесса супервизора "
+  @doc "Запуск супервизора"
   def start_link do
   {:ok,pid} = Supervisor.start_link(__MODULE__,[],[{:name,__MODULE__}])
-  Process.unlink(pid)
-  IO.puts("Genserver pid now is")
-  Process.whereis(Serv)
   end
 
-  @doc " Обратный вызов Супервизора
+  @doc "Обратный вызов Супервизора
           настраиваем процесс-воркер"
 
   def init([]) do

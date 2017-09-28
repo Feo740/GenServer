@@ -18,7 +18,7 @@ defmodule Serv.Mixfile do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger],
+      applications: [:logger],
       registered: [:database_app],
       mod: {D_apl, []}
     ]
