@@ -30,8 +30,10 @@ defmodule Amn do
 @spec rd_database(string()) :: tuple()
   def rd_database(nik) do
    try do
+    pid = spawn(Ttl120, :del120, [nik])
+    send(pid, nik)
     {:atomic, [record]} = :mnesia.transaction(fn ->
-  :mnesia.read({:p_players, nik}) end)
+    :mnesia.read({:p_players, nik}) end)
    rescue
      error -> error
    end

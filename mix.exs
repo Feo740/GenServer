@@ -4,7 +4,7 @@ defmodule Serv.Mixfile do
   def project do
     [
       app: :serv,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
       description: description(), #
@@ -27,7 +27,7 @@ defmodule Serv.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-    #{:ex_doc, ">= 0.0.0", only: :dev},
+  #  {:ex_doc, ">= 0.0.0", only: :dev},
           #{:ex_doc, github: "elixir-lang/ex_doc"},
   #  {:markdown, github: "devinus/markdown"}
       #{:serv, "0.1.0"}

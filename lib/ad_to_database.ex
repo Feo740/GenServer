@@ -10,8 +10,8 @@ defmodule Ad_db do
               nik = String.trim(IO.gets("Введите ник игрока:")) # Trim для отбрасывания хвоста /n
              name = String.trim(IO.gets("Введите имя игрока:"))
              age = String.trim(IO.gets("Введите возраст игрока:"))
-            games = String.to_integer(String.strip(IO.gets("Введите количество игр:")))
-            wins = String.to_integer(String.strip(IO.gets("Введите количество побед:")))
+            games = String.to_integer(String.trim(IO.gets("Введите количество игр:")))
+            wins = String.to_integer(String.trim(IO.gets("Введите количество побед:")))
             :mnesia.transaction(fn ->:mnesia.write({:p_players, nik, name, age, games, wins}) end)
       end
   end
